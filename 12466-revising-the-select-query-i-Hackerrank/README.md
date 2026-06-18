@@ -5,3 +5,7 @@
 <p>The <strong>CITY</strong> table is described as follows:  </p>
 
 <p><img src="https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" alt="CITY.jpg" title=""></p></div></div></div></div>
+
+
+Solution - 
+select * from city where population>100000 and CountryCode='USA';
