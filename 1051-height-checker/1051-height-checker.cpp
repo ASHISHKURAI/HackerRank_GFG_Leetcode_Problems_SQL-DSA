@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int heightChecker(vector<int>& heights) {
+        vector<int> v(heights);
+        sort(v.begin(),v.end());
+        int count = 0;
+        for(int i=0;i<heights.size();i++){
+            if(heights[i] != v[i])
+             count++;
+        }
+        return count;
+    }
+};
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
