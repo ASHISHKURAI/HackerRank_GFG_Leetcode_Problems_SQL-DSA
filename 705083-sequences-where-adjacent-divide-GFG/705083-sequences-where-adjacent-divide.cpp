@@ -1,0 +1,27 @@
+class Solution {
+  public:
+  
+    int solve(int ind, int prev, int n, int m, vector<vector<int>>&dp){
+        if(ind==n) return 1;
+        
+        if(dp[ind][prev]!=-1) return dp[ind][prev];
+        
+        int cnt=0;
+        for(int i=1; i<=m; i++){
+            if(((i%prev)==0) || ((prev%i)==0)){
+                cnt+=solve(ind+1, i, n, m, dp);
+            }
+        }
+        return dp[ind][prev]=cnt;
+    }
+  
+    int count(int n, int m) {
+        // code here
+        vector<vector<int>>dp(n, vector<int>(m+1, -1));
+        return solve(0, 1, n, m, dp);
+    }
+};
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
